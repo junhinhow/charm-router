@@ -193,6 +193,9 @@ Titles are normalized to a single line (tabs and line breaks become spaces).
   so the position keeps what the original `Push` stored.
 - **`Reset` does not re-run `Init`.** The base screen is the same instance that was
   already in the stack, with its current state.
+- **`New(nil)` is tolerated.** The stack starts empty (`Depth` 0) and `Current`
+  returns nil. The first `Push` becomes the base and, like any base, cannot be
+  popped.
 - **Resize is sticky.** `WindowSizeMsg` is stored, broadcast to every screen in the
   stack that implements `SetSize`, and then delivered to the top screen's `Update`.
   Screens pushed later receive the stored size before `Init` runs.

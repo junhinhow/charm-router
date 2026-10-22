@@ -10,7 +10,7 @@
 // caminho quente de Update.
 package router
 
-import "charm.land/bubbletea/v2"
+import tea "charm.land/bubbletea/v2"
 
 // Screen é uma tela navegável.
 type Screen interface {

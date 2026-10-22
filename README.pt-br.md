@@ -196,6 +196,8 @@ espaços).
   posição continua com o que o `Push` original guardou.
 - **`Reset` não roda `Init` de novo.** A tela base é a mesma instância que já
   estava na pilha, com o estado atual.
+- **`New(nil)` é tolerado.** A pilha começa vazia (`Depth` 0) e `Current` devolve
+  nil. O primeiro `Push` vira a base e, como toda base, não pode ser desempilhado.
 - **O tamanho é pegajoso.** `WindowSizeMsg` é guardado, repassado a todas as telas
   da pilha que implementam `SetSize` e, só então, entregue ao `Update` do topo.
   Telas empilhadas depois recebem o tamanho guardado antes do `Init`.
